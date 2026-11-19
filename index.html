@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The $4,000 Ceiling — Years of Life per Health Dollar | Manesh Sunil Jadhav</title>
+<meta name="description" content="Past about $4,000 per person, doubling health spending buys just 0.4 more years of life. An Avaloka analysis of 217 countries, 2000–2023.">
+<style>
+  :root { --ink:#1c2430; --muted:#5b6774; --teal:#0e7c6b; --teal-dark:#0a5c50;
+          --red:#c0392b; --amber:#b7791f; --bg:#faf9f7; --card:#ffffff; --line:#e3e6ea; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+         font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+         line-height:1.65; font-size:17px; }
+  .wrap { max-width:960px; margin:0 auto; padding:0 20px 64px; }
+  header.hero { background:linear-gradient(160deg,#0a2e29 0%,#0e7c6b 78%,#12937f 100%);
+                color:#fff; padding:56px 0 44px; }
+  .kicker { font-size:12.5px; letter-spacing:.22em; text-transform:uppercase; opacity:.85; font-weight:700; }
+  h1 { font-size:clamp(2.4rem,6vw,3.9rem); line-height:1.05; margin:14px 0 10px; letter-spacing:-.02em; }
+  .lede { font-size:clamp(1.15rem,2.6vw,1.45rem); line-height:1.45; max-width:44em; opacity:.96; margin:0 0 8px; }
+  .question { font-size:1.05rem; opacity:.85; font-style:italic; }
+  .byline { margin-top:26px; padding:16px 18px; background:rgba(255,255,255,.12);
+            border:1px solid rgba(255,255,255,.25); border-radius:10px; font-size:.95rem; line-height:1.55; }
+  .byline strong { font-size:1.05rem; }
+  .byline a { color:#fff; }
+  .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin:28px 0 8px; }
+  .stat { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px 18px; }
+  .stat b { display:block; font-size:1.7rem; line-height:1.1; color:var(--teal-dark); }
+  .stat span { font-size:.85rem; color:var(--muted); }
+  h2 { font-size:1.65rem; margin:52px 0 6px; letter-spacing:-.01em; }
+  h2 .num { color:var(--teal); margin-right:8px; }
+  .sub { color:var(--muted); margin:0 0 18px; font-size:1.02rem; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:22px 22px 14px; margin:16px 0; }
+  .card svg { width:100%; height:auto; display:block; }
+  .caption { font-size:.85rem; color:var(--muted); margin:10px 0 4px; }
+  table { width:100%; border-collapse:collapse; margin:14px 0; font-size:.97rem; }
+  th { text-align:left; color:var(--muted); font-size:.82rem; text-transform:uppercase;
+       letter-spacing:.06em; border-bottom:2px solid var(--line); padding:8px 10px; }
+  td { padding:9px 10px; border-bottom:1px solid var(--line); }
+  tr.hl td { background:#fdf6e3; }
+  tr.usa td { background:#fdecea; }
+  .callout { border-left:4px solid var(--teal); background:#eef7f4; padding:16px 20px;
+             border-radius:0 10px 10px 0; margin:20px 0; }
+  .callout.red { border-color:var(--red); background:#fdecea; }
+  .callout.amber { border-color:var(--amber); background:#fdf6e3; }
+  .callout p { margin:0; }
+  .grid2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin:16px 0; }
+  .mini { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px 18px; }
+  .mini b { display:block; font-size:1.5rem; color:var(--teal-dark); line-height:1.15; }
+  .mini span { font-size:.88rem; color:var(--muted); }
+  .twrap { overflow-x:auto; }
+  code { background:#eef1f3; padding:1px 6px; border-radius:5px; font-size:.9em; }
+  ul { padding-left:22px; }
+  li { margin:6px 0; }
+  footer { margin-top:56px; padding-top:22px; border-top:1px solid var(--line);
+           color:var(--muted); font-size:.9rem; }
+  footer a { color:var(--teal-dark); }
+  @media (max-width:640px){ .card{padding:16px 12px 10px;} body{font-size:16px;} }
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap" style="padding-bottom:0">
+  <div class="kicker">Avaloka Hackathon &middot; November 2026 &middot; Analysis by Avaloka CLI v1.6</div>
+  <h1>The $4,000 Ceiling</h1>
+  <p class="lede">Past about $4,000 of health spending per person, doubling the money buys just <strong>+0.4&nbsp;years</strong> of life. The richest health system on Earth buys the least life per dollar &mdash; and India is quietly beating its income peers.</p>
+  <p class="question">The question: which countries get the most years of life per health dollar &mdash; and where does India stand?</p>
+  <div class="byline">
+    <strong>Manesh Sunil Jadhav</strong><br>
+    Final-year Diploma in AI &amp; ML, Government Polytechnic Mumbai<br>
+    Best Undergraduate, Google Mumbai Data Challenge (Google + Zindi), November 2026<br>
+    <a href="https://github.com/maneshdev-cloud">github.com/maneshdev-cloud</a> &middot;
+    <a href="https://www.linkedin.com/in/manesh-jadhav04">linkedin.com/in/manesh-jadhav04</a>
+  </div>
+</div></header>
+
+<main class="wrap">
+  <div class="stats">
+    <div class="stat"><b>217</b><span>countries, 2000&ndash;2023</span></div>
+    <div class="stat"><b>5,208</b><span>country-year rows</span></div>
+    <div class="stat"><b>192</b><span>countries in the 2023 snapshot</span></div>
+    <div class="stat"><b>r = 0.655</b><span>spending vs life expectancy</span></div>
+    <div class="stat"><b>R&sup2; 0.776</b><span>random-forest holdout</span></div>
+  </div>
+
+  <h2><span class="num">01</span> The saturation curve</h2>
+  <p class="sub">Mean life expectancy by 2023 health-spending band (PPP $ per person). The curve climbs fast, then stops.</p>
+  <div class="card"><svg viewBox="0 0 900 430" role="img" aria-label="Line chart: mean life expectancy rises steeply with health spending, then flattens after about 4,000 dollars per person."><line x1="58" y1="306.2" x2="866" y2="306.2" stroke="#e3e6ea"/><text x="48" y="310.2" text-anchor="end" font-size="13" fill="#5b6774">65</text><line x1="58" y1="240.5" x2="866" y2="240.5" stroke="#e3e6ea"/><text x="48" y="244.5" text-anchor="end" font-size="13" fill="#5b6774">70</text><line x1="58" y1="174.7" x2="866" y2="174.7" stroke="#e3e6ea"/><text x="48" y="178.7" text-anchor="end" font-size="13" fill="#5b6774">75</text><line x1="58" y1="108.9" x2="866" y2="108.9" stroke="#e3e6ea"/><text x="48" y="112.9" text-anchor="end" font-size="13" fill="#5b6774">80</text><line x1="58" y1="43.2" x2="866" y2="43.2" stroke="#e3e6ea"/><text x="48" y="47.2" text-anchor="end" font-size="13" fill="#5b6774">85</text><text x="14" y="18" font-size="12" fill="#5b6774">years</text><line x1="58.0" y1="372" x2="58.0" y2="378" stroke="#5b6774"/><text x="58.0" y="394" text-anchor="middle" font-size="13" fill="#5b6774">$100</text><line x1="197.7" y1="372" x2="197.7" y2="378" stroke="#5b6774"/><text x="197.7" y="394" text-anchor="middle" font-size="13" fill="#5b6774">$250</text><line x1="303.4" y1="372" x2="303.4" y2="378" stroke="#5b6774"/><text x="303.4" y="394" text-anchor="middle" font-size="13" fill="#5b6774">$500</text><line x1="409.1" y1="372" x2="409.1" y2="378" stroke="#5b6774"/><text x="409.1" y="394" text-anchor="middle" font-size="13" fill="#5b6774">$1k</text><line x1="514.9" y1="372" x2="514.9" y2="378" stroke="#5b6774"/><text x="514.9" y="394" text-anchor="middle" font-size="13" fill="#5b6774">$2k</text><line x1="620.6" y1="372" x2="620.6" y2="378" stroke="#5b6774"/><text x="620.6" y="394" text-anchor="middle" font-size="13" fill="#5b6774">$4k</text><line x1="726.3" y1="372" x2="726.3" y2="378" stroke="#5b6774"/><text x="726.3" y="394" text-anchor="middle" font-size="13" fill="#5b6774">$8k</text><line x1="832.0" y1="372" x2="832.0" y2="378" stroke="#5b6774"/><text x="832.0" y="394" text-anchor="middle" font-size="13" fill="#5b6774">$16k</text><text x="462" y="424" text-anchor="middle" font-size="12" fill="#5b6774">Health spending per person, 2023 (PPP $, log scale) — dot placed at each band’s mean spend</text><line x1="620.6" y1="30" x2="620.6" y2="372" stroke="#b7791f" stroke-dasharray="6 5" stroke-width="1.6"/><text x="628.6" y="46" font-size="13" font-weight="700" fill="#b7791f">the $4,000 ceiling</text><text x="628.6" y="64" font-size="12" fill="#b7791f">doubling spend past here: +0.4 yrs</text><path d="M 120.8,306.2 L 254.6,273.3 L 362.8,211.5 L 462.8,186.5 L 571.1,141.8 L 682.5,74.7 L 756.6,69.5 L 756.6,372 L 120.8,372 Z" fill="#0e7c6b" opacity="0.08"/><path d="M 120.8,306.2 L 254.6,273.3 L 362.8,211.5 L 462.8,186.5 L 571.1,141.8 L 682.5,74.7 L 756.6,69.5" fill="none" stroke="#0e7c6b" stroke-width="3" stroke-linejoin="round"/><circle cx="120.8" cy="306.2" r="6" fill="#fff" stroke="#0e7c6b" stroke-width="3"/><text x="120.8" y="292.2" text-anchor="middle" font-size="13" font-weight="700" fill="#1c2430">65.0 yrs</text><text x="120.8" y="332.2" text-anchor="middle" font-size="11.5" fill="#5b6774">n=45</text><circle cx="254.6" cy="273.3" r="6" fill="#fff" stroke="#0e7c6b" stroke-width="3"/><text x="254.6" y="259.3" text-anchor="middle" font-size="13" font-weight="700" fill="#1c2430">67.5 yrs</text><text x="254.6" y="299.3" text-anchor="middle" font-size="11.5" fill="#5b6774">n=17</text><circle cx="362.8" cy="211.5" r="6" fill="#fff" stroke="#0e7c6b" stroke-width="3"/><text x="362.8" y="197.5" text-anchor="middle" font-size="13" font-weight="700" fill="#1c2430">72.2 yrs</text><text x="362.8" y="237.5" text-anchor="middle" font-size="11.5" fill="#5b6774">n=30</text><circle cx="462.8" cy="186.5" r="6" fill="#fff" stroke="#0e7c6b" stroke-width="3"/><text x="462.8" y="172.5" text-anchor="middle" font-size="13" font-weight="700" fill="#1c2430">74.1 yrs</text><text x="462.8" y="212.5" text-anchor="middle" font-size="11.5" fill="#5b6774">n=37</text><circle cx="571.1" cy="141.8" r="6" fill="#fff" stroke="#0e7c6b" stroke-width="3"/><text x="571.1" y="127.8" text-anchor="middle" font-size="13" font-weight="700" fill="#1c2430">77.5 yrs</text><text x="571.1" y="167.8" text-anchor="middle" font-size="11.5" fill="#5b6774">n=30</text><circle cx="682.5" cy="74.7" r="6" fill="#fff" stroke="#0e7c6b" stroke-width="3"/><text x="682.5" y="60.7" text-anchor="middle" font-size="13" font-weight="700" fill="#1c2430">82.6 yrs</text><text x="682.5" y="100.7" text-anchor="middle" font-size="11.5" fill="#5b6774">n=25</text><circle cx="756.6" cy="69.5" r="6" fill="#fff" stroke="#0e7c6b" stroke-width="3"/><text x="756.6" y="55.5" text-anchor="middle" font-size="13" font-weight="700" fill="#1c2430">83.0 yrs</text><text x="756.6" y="95.5" text-anchor="middle" font-size="11.5" fill="#5b6774">n=8</text></svg>
+    <p class="caption">Each dot is a spending band&rsquo;s mean life expectancy, placed at that band&rsquo;s mean spend. n = countries in the band. Source: World Bank, 2023 (n = 192 countries).</p>
+  </div>
+  <div class="twrap"><table>
+    <tr><th>Health spend / person (PPP $, 2023)</th><th>Mean spend in band</th><th>Mean life expectancy</th><th>Countries</th></tr>
+    <tr><td>$0–250</td><td>$151</td><td><strong>65.0</strong></td><td>45</td></tr><tr><td>$250–500</td><td>$363</td><td><strong>67.5</strong></td><td>17</td></tr><tr><td>$500–1,000</td><td>$738</td><td><strong>72.2</strong></td><td>30</td></tr><tr><td>$1,000–2,000</td><td>$1,422</td><td><strong>74.1</strong></td><td>37</td></tr><tr><td>$2,000–4,000</td><td>$2,893</td><td><strong>77.5</strong></td><td>30</td></tr><tr class="hl"><td>$4,000–8,000</td><td>$6,004</td><td><strong>82.6</strong></td><td>25</td></tr><tr class="hl"><td>$8,000+</td><td>$9,762</td><td><strong>83.0</strong></td><td>8</td></tr>
+  </table></div>
+  <div class="callout amber"><p><strong>The ceiling:</strong> countries spending $4,000&ndash;8,000 per person live 82.6 years on average; countries spending over $8,000 live 83.0. Doubling the money past ~$4,000 buys <strong>+0.4 years</strong>. Below the ceiling, every extra dollar still matters enormously &mdash; moving from the $0&ndash;250 band to the $500&ndash;1,000 band is worth +7.2 years.</p></div>
+
+  <h2><span class="num">02</span> The USA paradox</h2>
+  <p class="sub">The United States spends more on health per person than any country on Earth &mdash; $13,473 in 2023 &mdash; and gets 78.4 years of life for it. Among 123 countries with population over 5 million, it is <strong>dead last</strong> in years of life per $1,000 spent.</p>
+  <div class="card"><svg viewBox="0 0 900 364" role="img" aria-label="Bar chart: years of life per 1,000 dollars of health spending, 2023. China 52.4, Costa Rica 41.9, South Korea 17.4, Japan 15.7, United Kingdom 12.8, Germany 9.8, Switzerland 7.9, United States 5.8."><text x="138" y="33" text-anchor="end" font-size="14" font-weight="600" fill="#1c2430">China</text><rect x="150" y="20" width="648.2" height="22" rx="4" fill="#0e7c6b" opacity="0.92"/><text x="808.2" y="37" font-size="14" font-weight="700" fill="#0e7c6b">52.43</text><text x="138" y="73" text-anchor="end" font-size="14" font-weight="600" fill="#1c2430">Costa Rica</text><rect x="150" y="60" width="518.2" height="22" rx="4" fill="#0e7c6b" opacity="0.92"/><text x="678.2" y="77" font-size="14" font-weight="700" fill="#0e7c6b">41.91</text><text x="138" y="113" text-anchor="end" font-size="14" font-weight="600" fill="#1c2430">South Korea</text><rect x="150" y="100" width="215.0" height="22" rx="4" fill="#0e7c6b" opacity="0.92"/><text x="375.0" y="117" font-size="14" font-weight="700" fill="#0e7c6b">17.39</text><text x="138" y="153" text-anchor="end" font-size="14" font-weight="600" fill="#1c2430">Japan</text><rect x="150" y="140" width="193.6" height="22" rx="4" fill="#0e7c6b" opacity="0.92"/><text x="353.6" y="157" font-size="14" font-weight="700" fill="#0e7c6b">15.66</text><text x="138" y="193" text-anchor="end" font-size="14" font-weight="600" fill="#1c2430">United Kingdom</text><rect x="150" y="180" width="157.8" height="22" rx="4" fill="#0e7c6b" opacity="0.92"/><text x="317.8" y="197" font-size="14" font-weight="700" fill="#0e7c6b">12.76</text><text x="138" y="233" text-anchor="end" font-size="14" font-weight="600" fill="#1c2430">Germany</text><rect x="150" y="220" width="120.7" height="22" rx="4" fill="#0e7c6b" opacity="0.92"/><text x="280.7" y="237" font-size="14" font-weight="700" fill="#0e7c6b">9.76</text><text x="138" y="273" text-anchor="end" font-size="14" font-weight="600" fill="#1c2430">Switzerland</text><rect x="150" y="260" width="98.2" height="22" rx="4" fill="#0e7c6b" opacity="0.92"/><text x="258.2" y="277" font-size="14" font-weight="700" fill="#0e7c6b">7.94</text><text x="138" y="313" text-anchor="end" font-size="14" font-weight="600" fill="#1c2430">United States</text><rect x="150" y="300" width="72.0" height="22" rx="4" fill="#c0392b" opacity="0.92"/><text x="232.0" y="317" font-size="14" font-weight="700" fill="#c0392b">5.82</text><text x="150" y="358" font-size="12" fill="#5b6774">Years of life per $1,000 of health spending, 2023 · countries with population &gt; 5 million</text></svg>
+    <p class="caption">Efficiency here is measured only among large countries (population &gt; 5 million), so the comparison is between real health systems &mdash; not against tiny or war-affected states. A raw global ranking would be dominated by the poorest countries, where a tiny spend divided into any lifespan looks &ldquo;efficient&rdquo;. That is poverty, not efficiency, and this report does not headline it.</p>
+  </div>
+  <div class="twrap"><table>
+    <tr><th>Country</th><th>Health spend / person (PPP $, 2023)</th><th>Life expectancy (2023)</th><th>Years per $1,000</th></tr>
+    <tr class="usa"><td>United States</td><td>$13,473</td><td>78.4</td><td><strong>5.82</strong></td></tr><tr><td>Switzerland</td><td>$10,602</td><td>84.2</td><td><strong>7.94</strong></td></tr><tr><td>Germany</td><td>$8,306</td><td>81.0</td><td><strong>9.76</strong></td></tr><tr><td>United Kingdom</td><td>$6,365</td><td>81.2</td><td><strong>12.76</strong></td></tr><tr><td>Japan</td><td>$5,365</td><td>84.0</td><td><strong>15.66</strong></td></tr><tr><td>South Korea</td><td>$4,798</td><td>83.4</td><td><strong>17.39</strong></td></tr><tr><td>Costa Rica</td><td>$1,928</td><td>80.8</td><td><strong>41.91</strong></td></tr><tr><td>China</td><td>$1,487</td><td>78.0</td><td><strong>52.43</strong></td></tr>
+  </table></div>
+  <div class="callout red"><p><strong>Japan spends 40% of what the USA spends &mdash; and lives 5.7 years longer.</strong> Costa Rica spends one-seventh of the USA&rsquo;s budget and lives 2.4 years longer. South Korea spends $4,798 per person and reaches 83.4 years. The two biggest spenders on the planet, the USA and Switzerland, are the two least efficient large countries in the dataset.</p></div>
+
+  <h2><span class="num">03</span> Where India stands</h2>
+  <p class="sub">India spends $346 per person on health (2023) and reaches 72.0 years of life. Judged against countries at its own income level, India is ahead of the pack.</p>
+  <div class="grid2">
+    <div class="mini"><b>$346</b><span>health spend per person, 2023 (PPP $)</span></div>
+    <div class="mini"><b>72.0 yrs</b><span>life expectancy, 2023</span></div>
+    <div class="mini"><b>#14 of 30</b><span>by life expectancy among income-matched peers (GDP per capita PPP 0.7&times;&ndash;1.4&times; India&rsquo;s $9,853)</span></div>
+    <div class="mini"><b>+2.0 yrs</b><span>above the peer mean of 70.0 years</span></div>
+  </div>
+  <p>India&rsquo;s position is genuinely good for its income &mdash; but the peer table also names the gap: <strong>Bangladesh reaches 74.7 years</strong> at a similar income, 2.7 years ahead of India. The lesson of the ceiling cuts both ways for India: there is still enormous life to be bought cheaply below $4,000 per person, and the countries to learn from are the efficient ones &mdash; Japan, South Korea, Costa Rica &mdash; not the biggest spenders.</p>
+
+  <h2><span class="num">04</span> Twenty-four years of progress</h2>
+  <p class="sub">The world&rsquo;s average life expectancy rose from 67.6 years in 2000 to 73.8 in 2023 &mdash; a gain of 6.2 years in a generation.</p>
+  <div class="card"><svg viewBox="0 0 900 360" role="img" aria-label="Line chart: global mean life expectancy rose from 67.6 years in 2000 to 73.8 in 2023, with a dip in 2020-2021."><line x1="58" y1="277.6" x2="866" y2="277.6" stroke="#e3e6ea"/><text x="48" y="281.6" text-anchor="end" font-size="13" fill="#5b6774">67</text><line x1="58" y1="216.7" x2="866" y2="216.7" stroke="#e3e6ea"/><text x="48" y="220.7" text-anchor="end" font-size="13" fill="#5b6774">69</text><line x1="58" y1="155.8" x2="866" y2="155.8" stroke="#e3e6ea"/><text x="48" y="159.8" text-anchor="end" font-size="13" fill="#5b6774">71</text><line x1="58" y1="94.9" x2="866" y2="94.9" stroke="#e3e6ea"/><text x="48" y="98.9" text-anchor="end" font-size="13" fill="#5b6774">73</text><line x1="58" y1="34.0" x2="866" y2="34.0" stroke="#e3e6ea"/><text x="48" y="38.0" text-anchor="end" font-size="13" fill="#5b6774">75</text><text x="58.0" y="330" text-anchor="middle" font-size="12.5" fill="#5b6774">2000</text><text x="128.3" y="330" text-anchor="middle" font-size="12.5" fill="#5b6774">2002</text><text x="198.5" y="330" text-anchor="middle" font-size="12.5" fill="#5b6774">2004</text><text x="268.8" y="330" text-anchor="middle" font-size="12.5" fill="#5b6774">2006</text><text x="339.0" y="330" text-anchor="middle" font-size="12.5" fill="#5b6774">2008</text><text x="409.3" y="330" text-anchor="middle" font-size="12.5" fill="#5b6774">2010</text><text x="479.6" y="330" text-anchor="middle" font-size="12.5" fill="#5b6774">2012</text><text x="549.8" y="330" text-anchor="middle" font-size="12.5" fill="#5b6774">2014</text><text x="620.1" y="330" text-anchor="middle" font-size="12.5" fill="#5b6774">2016</text><text x="690.3" y="330" text-anchor="middle" font-size="12.5" fill="#5b6774">2018</text><text x="760.6" y="330" text-anchor="middle" font-size="12.5" fill="#5b6774">2020</text><text x="830.9" y="330" text-anchor="middle" font-size="12.5" fill="#5b6774">2022</text><path d="M 58.0,259.3 L 93.1,250.2 L 128.3,241.0 L 163.4,228.8 L 198.5,219.7 L 233.7,210.6 L 268.8,201.4 L 303.9,189.3 L 339.0,180.1 L 374.2,177.1 L 409.3,161.9 L 444.4,152.7 L 479.6,140.6 L 514.7,131.4 L 549.8,128.4 L 585.0,122.3 L 620.1,116.2 L 655.2,110.1 L 690.3,97.9 L 725.5,94.9 L 760.6,110.1 L 795.7,131.4 L 830.9,91.8 L 866.0,70.5 L 866.0,308 L 58.0,308 Z" fill="#0e7c6b" opacity="0.08"/><path d="M 58.0,259.3 L 93.1,250.2 L 128.3,241.0 L 163.4,228.8 L 198.5,219.7 L 233.7,210.6 L 268.8,201.4 L 303.9,189.3 L 339.0,180.1 L 374.2,177.1 L 409.3,161.9 L 444.4,152.7 L 479.6,140.6 L 514.7,131.4 L 549.8,128.4 L 585.0,122.3 L 620.1,116.2 L 655.2,110.1 L 690.3,97.9 L 725.5,94.9 L 760.6,110.1 L 795.7,131.4 L 830.9,91.8 L 866.0,70.5" fill="none" stroke="#0e7c6b" stroke-width="2.6" stroke-linejoin="round"/><circle cx="58.0" cy="259.3" r="5" fill="#fff" stroke="#0e7c6b" stroke-width="3"/><text x="68.0" y="249.3" font-size="13" font-weight="700" fill="#1c2430">67.6 yrs (2000)</text><circle cx="866.0" cy="70.5" r="5" fill="#fff" stroke="#0e7c6b" stroke-width="3"/><text x="856.0" y="58.5" text-anchor="end" font-size="13" font-weight="700" fill="#1c2430">73.8 yrs (2023)</text><circle cx="795.7" cy="131.4" r="5" fill="#c0392b" stroke="#fff" stroke-width="2"/><text x="866" y="161.4" text-anchor="end" font-size="12.5" font-weight="700" fill="#c0392b">COVID-19: the only reversal in 24 years</text><text x="866" y="178.4" text-anchor="end" font-size="12.5" fill="#c0392b">73.0 → 71.8 yrs (2019–2021), recovered by 2022</text></svg>
+    <p class="caption">Unweighted mean life expectancy across countries, each year 2000&ndash;2023. Every country counts equally, so this is the average country&rsquo;s trajectory &mdash; not a population-weighted global figure.</p>
+  </div>
+
+  <h2><span class="num">05</span> Correlation &mdash; and the GDP twist</h2>
+  <p class="sub">Health spending correlates with life expectancy at Pearson r = 0.655 across all 5,208 country-years. But so does plain national wealth.</p>
+  <div class="grid2">
+    <div class="mini"><b>r = 0.655</b><span>health spend per capita (PPP) vs life expectancy</span></div>
+    <div class="mini"><b>r = 0.651</b><span>GDP per capita (PPP) vs life expectancy</span></div>
+  </div>
+  <p>GDP per capita predicts life expectancy about as well as health spending does. That reframes the whole question: the money itself is not the differentiator &mdash; <strong>how a country spends it is</strong>. Two countries at similar income can sit years apart in lifespan. The ceiling, the USA paradox and the Japan/Costa Rica contrast are all the same story: beyond a point, outcomes come from the system, not the budget.</p>
+
+  <h2><span class="num">06</span> The model</h2>
+  <p class="sub">A random-forest model trained with Avaloka to predict life expectancy from spending, GDP, population and year.</p>
+  <div class="grid2">
+    <div class="mini"><b>R&sup2; 0.7762</b><span>holdout (time-based split: 4,166 train / 1,042 test rows)</span></div>
+    <div class="mini"><b>CV R&sup2; 0.846 &plusmn; 0.051</b><span>cross-validated; beats the mean baseline (&minus;0.106)</span></div>
+    <div class="mini"><b>R&sup2; 0.1139</b><span>linear regression on the same data &mdash; a straight line cannot explain this relationship</span></div>
+    <div class="mini"><b>PASS &middot; level 4/4</b><span>Avaloka validation: no target leakage, stable across folds</span></div>
+  </div>
+  <p>The model comparison is the saturation story in miniature: linear regression manages R&sup2; 0.11, while a random forest that can bend reaches 0.78. Life expectancy does not rise in a straight line with spending &mdash; it curves, and then it flattens.</p>
+
+  <h2><span class="num">07</span> Methodology</h2>
+  <ul>
+    <li><strong>Data:</strong> World Bank Open Data API (no key required), five indicators joined on country + year &mdash; life expectancy (SP.DYN.LE00.IN), health expenditure per capita PPP (SH.XPD.CHEX.PP.CD) and current US$ (SH.XPD.CHEX.PC.CD), GDP per capita PPP (NY.GDP.PCAP.PP.CD), population (SP.POP.TOTL). 217 real countries, 2000&ndash;2023, 5,208 rows, 4,415 complete. World Bank aggregates (World, High income, regions) were filtered out.</li>
+    <li><strong>Analysis:</strong> Avaloka open-source CLI v1.6 (<code>avaloka analyze</code> + <code>avaloka train</code>), deterministic goal-specific calculations &mdash; group comparison, Pearson correlation, time trend, and a random-forest regression with a time-based holdout. No LLM-generated figures anywhere in this report.</li>
+    <li><strong>Verification:</strong> every number Avaloka reported was independently re-computed from the raw CSV with a separate script (<code>scripts/verify_numbers.py</code> in the repo). All headline figures matched exactly.</li>
+    <li><strong>Reproduce:</strong> <code>python scripts/fetch_worldbank.py</code> re-fetches the data; the Avaloka commands are listed in the repo README.</li>
+  </ul>
+
+  <h2><span class="num">08</span> Limitations</h2>
+  <ul>
+    <li><strong>Ecological data:</strong> country averages hide within-country inequality &mdash; a national mean says nothing about who inside a country lives longest.</li>
+    <li><strong>PPP comparability:</strong> purchasing-power-parity dollars make spending comparable across countries, but PPP conversion is approximate, especially for health services.</li>
+    <li><strong>Unweighted means:</strong> band and trend averages count each country equally; populous countries do not dominate. Population-weighted figures would differ.</li>
+    <li><strong>Correlation &ne; causation:</strong> r = 0.655 describes association. Health spending, wealth, education, sanitation and diet move together; this analysis does not separate their effects.</li>
+    <li><strong>Coverage:</strong> 2023 figures reflect the latest World Bank data; 25 of 217 countries lack a 2023 spending or life-expectancy value and are absent from the snapshot (n = 192).</li>
+  </ul>
+
+  <footer>
+    <p><strong>Manesh Sunil Jadhav</strong> &middot; Final-year Diploma in AI &amp; ML, Government Polytechnic Mumbai &middot; Best Undergraduate, Google Mumbai Data Challenge (Google + Zindi), Nov 2026</p>
+    <p>Built for the Avaloka Hackathon (Guruvai Sciences), November 2026, using the open-source <a href="https://github.com/guruvaidev/avaloka">Avaloka CLI</a>. Data: <a href="https://data.worldbank.org/">World Bank Open Data</a>. Full data, code and Avaloka outputs: <a href="https://github.com/maneshdev-cloud/avaloka-health-dollars">github.com/maneshdev-cloud/avaloka-health-dollars</a></p>
+  </footer>
+</main>
+</body>
+</html>

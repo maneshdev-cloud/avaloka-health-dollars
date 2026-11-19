@@ -1,0 +1,82 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Technical report — average life_expectancy by spend_band</title>
+<style>
+body{font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;color:#1b1f24;background:#f6f8fa}
+.wrap{max-width:960px;margin:0 auto;padding:32px}
+h1{font-size:28px;margin:0 0 4px} h2{font-size:20px;margin:28px 0 8px;border-bottom:1px solid #e1e4e8;padding-bottom:6px}
+.sub{color:#57606a;margin:0 0 20px}
+.card{background:#fff;border:1px solid #e1e4e8;border-radius:8px;padding:16px 20px;margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:14px} th,td{text-align:left;padding:7px 10px;border-bottom:1px solid #eaecef}
+th{background:#f6f8fa} .kpi{display:inline-block;min-width:150px;margin:6px 18px 6px 0}
+.kpi .v{font-size:22px;font-weight:600} .kpi .l{color:#57606a;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.pass{color:#1a7f37;font-weight:600}.warn{color:#9a6700;font-weight:600}.fail{color:#cf222e;font-weight:600}
+.badge{display:inline-block;padding:2px 8px;border-radius:12px;font-size:12px;background:#ddf4ff;color:#0969da}
+.muted{color:#57606a;font-size:13px} code{background:#eff1f3;padding:1px 5px;border-radius:4px}
+</style></head><body><div class="wrap">
+<h1>Technical report</h1>
+<p class="sub">average life_expectancy by spend_band · mission <code>c5b14c84e8da</code></p>
+
+<h2>Dataset</h2>
+<div class="card"><p><code>data/wb_2023_snapshot.csv</code> — 192 rows × 9 cols
+(csv). Quality score <strong>88/100</strong>.
+SHA-256 <span class="muted">ef43d8b457547937…</span></p></div>
+
+<h2>Schema &amp; distributions</h2>
+<div class="card"><table><tr><th>Column</th><th>Role</th><th>Dtype</th><th>Missing</th><th>Unique</th><th>Summary</th></tr>
+<tr><td>country_code</td><td>id</td><td>object</td>
+<td>0.0%</td><td>192</td>
+<td class="muted">top: AFG(1), AGO(1), ALB(1)</td></tr><tr><td>country</td><td>id</td><td>object</td>
+<td>0.0%</td><td>192</td>
+<td class="muted">top: Afghanistan(1), Angola(1), Albania(1)</td></tr><tr><td>year</td><td>constant</td><td>int64</td>
+<td>0.0%</td><td>1</td>
+<td class="muted"></td></tr><tr><td>life_expectancy</td><td>numeric</td><td>float64</td>
+<td>0.0%</td><td>191</td>
+<td class="muted">μ=73.1, σ=7.18,
+[54.5, 86.4], outliers=0
+</td></tr><tr><td>health_spend_ppp</td><td>numeric</td><td>float64</td>
+<td>0.0%</td><td>192</td>
+<td class="muted">μ=2.1e+03, σ=2.54e+03,
+[28.3, 1.35e+04], outliers=15
+</td></tr><tr><td>health_spend_usd</td><td>numeric</td><td>float64</td>
+<td>0.5%</td><td>191</td>
+<td class="muted">μ=1.43e+03, σ=2.33e+03,
+[17.4, 1.35e+04], outliers=23
+</td></tr><tr><td>gdp_per_capita_ppp</td><td>numeric</td><td>float64</td>
+<td>4.2%</td><td>184</td>
+<td class="muted">μ=2.87e+04, σ=2.92e+04,
+[1.15e+03, 1.53e+05], outliers=5
+</td></tr><tr><td>population</td><td>id</td><td>int64</td>
+<td>0.0%</td><td>192</td>
+<td class="muted">top: 41454761(1), 36749906(1), 2411658(1)</td></tr><tr><td>spend_band</td><td>categorical</td><td>object</td>
+<td>0.0%</td><td>7</td>
+<td class="muted">top: 0-250(45), 1000-2000(37), 2000-4000(30)</td></tr></table></div>
+
+<h2>Strongest correlations</h2>
+<div class="card"><table><tr><th>A</th><th>B</th><th>|corr|</th></tr>
+<tr><td>health_spend_ppp</td><td>health_spend_usd</td><td>0.9682</td></tr></table></div>
+<h2>Data quality issues</h2>
+<div class="card"><table><tr><th>Severity</th><th>Column</th><th>Issue</th></tr>
+<tr><td class="muted">low</td>
+<td>year</td><td>Column has a single value; no predictive content.</td></tr><tr><td class="warn">medium</td>
+<td>—</td><td>Only 192 rows; statistical conclusions are low-confidence.</td></tr></table>
+</div>
+
+<h2>Plan</h2>
+<div class="card"><p>Task: <strong>exploratory_analysis</strong> — No --target supplied; mission is analysis-only.</p>
+<p>Split: <code>none</code> — Analysis-only mission; no model split required.</p>
+<p>Candidate algorithms: —</p>
+<p class="muted">Unconstrained budget; all candidate algorithms considered.</p>
+<p><strong>Hypotheses:</strong></p><ul><li>&#39;health_spend_ppp&#39; and &#39;health_spend_usd&#39; move together (|corr|=0.9682); consider redundancy or a shared driver.</li><li>Surface the dominant segments and the variables that separate them.</li></ul></div>
+
+<h2>Goal-specific analysis</h2>
+<div class="card"><p><strong>group_comparison</strong> — answered
+· All 192 working rows</p><ul><li>spend_band=8000+: mean life_expectancy=83.</li><li>spend_band=4000-8000: mean life_expectancy=82.6.</li><li>spend_band=2000-4000: mean life_expectancy=77.5.</li><li>spend_band=1000-2000: mean life_expectancy=74.1.</li><li>spend_band=500-1000: mean life_expectancy=72.2.</li></ul>
+<p class="muted">Measured values and calculation details: <code>goal_analysis.json</code>.</p></div>
+
+<h2>Validation</h2>
+<div class="card"><p>Verdict <span class="pass">PASS</span>,
+max safe deployment level 1.</p>
+<table><tr><th>Check</th><th>Status</th><th>Detail</th></tr>
+<tr><td>data_sufficiency</td><td class="pass">pass</td><td class="muted">EDA needs only a modest sample.</td></tr></table></div>
+
+<p class="muted">Reproduce with <code>analysis.py</code> / <code>analysis.ipynb</code>; see <code>lineage.json</code> and <code>environment.lock</code>.</p>
+</div></body></html>

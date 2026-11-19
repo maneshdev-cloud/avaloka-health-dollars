@@ -1,0 +1,33 @@
+mission:
+  id: 0fba6f8e7878
+  goal: Predict 'life_expectancy'
+  kind: train
+sampling:
+  sampled: false
+  reason: 5,208 rows fits the live full-analysis lane; the full dataset is used so
+    no information is discarded.
+  n_input_rows: 5208
+  n_working_rows: 5208
+  strategy: none
+  stratify_by: null
+transformations:
+- op: strip_whitespace
+  columns:
+  - country_code
+  - country
+  - date
+task_choice:
+  task: regression
+  reason: Numeric target with 4820 distinct values.
+split:
+  strategy: time_based_holdout
+  reason: Datetime column present; a temporal split avoids look-ahead leakage.
+human_approval_gates:
+- Confirm the target and metric match the intended decision.
+- Approve the model before any Level 4 (production) deployment.
+refuse_if:
+- Target leakage is detected and unresolved.
+- Data is insufficient for a stable estimate of the chosen metric.
+- A requested deployment latency cannot be met by any candidate.
+data_quality_issues: []
+deferred_decisions: []

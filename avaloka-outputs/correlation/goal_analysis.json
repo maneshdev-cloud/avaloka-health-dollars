@@ -1,0 +1,23 @@
+{
+  "goal": "correlation between health_spend_ppp and life_expectancy",
+  "kind": "correlation",
+  "status": "answered",
+  "scope": "All 5,208 working rows",
+  "columns": [
+    "life_expectancy",
+    "health_spend_ppp"
+  ],
+  "metrics": {
+    "pairs": [
+      {
+        "left": "life_expectancy",
+        "right": "health_spend_ppp",
+        "r": 0.655201
+      }
+    ]
+  },
+  "findings": [
+    "life_expectancy and health_spend_ppp: Pearson r=0.655.",
+    "Correlation alone does not establish causation."
+  ]
+}

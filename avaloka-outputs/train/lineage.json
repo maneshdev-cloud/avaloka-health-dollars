@@ -1,0 +1,140 @@
+{
+  "mission_id": "0fba6f8e7878",
+  "kind": "train",
+  "started_at_epoch": 1795126017.3609018,
+  "source": {
+    "path": "data/wb_panel_dated.csv",
+    "sha256": "c61a6f997ba497a4fed912a4a6e5a0d50d8e6a911598316a3d3a71f6e0098e6d",
+    "format": "csv"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-7.0.0-44-generic-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "avaloka_mission_id": "0fba6f8e7878"
+  },
+  "transformations": [
+    {
+      "op": "strip_whitespace",
+      "columns": [
+        "country_code",
+        "country",
+        "date"
+      ]
+    }
+  ],
+  "work_units": [
+    {
+      "firefly": "data_scout",
+      "human_role": "Data analyst",
+      "output": "Profiled 9 columns x 5208 rows; quality score 100/100 with 0 issues flagged.",
+      "manual_minutes": 99,
+      "compute_cost_usd": 4.9e-05,
+      "model_cost_usd": 0.0,
+      "duration_seconds": 0.0817,
+      "notes": "",
+      "metadata": {
+        "quality_score": 100,
+        "n_issues": 0
+      }
+    },
+    {
+      "firefly": "sampling_specialist",
+      "human_role": "Data scientist",
+      "output": "Working sample: 5,208 rows (none). 5,208 rows fits the live full-analysis lane; the full dataset is used so no information is discarded.",
+      "manual_minutes": 30.0,
+      "compute_cost_usd": 0.0,
+      "model_cost_usd": 0.0,
+      "duration_seconds": 0.0002,
+      "notes": "",
+      "metadata": {
+        "sampled": false,
+        "strategy": "none"
+      }
+    },
+    {
+      "firefly": "data_engineer",
+      "human_role": "Data engineer",
+      "output": "Applied 1 documented transformations; wrote transformed_dataset.parquet (5208x9) + reproducible analysis.py / analysis.ipynb.",
+      "manual_minutes": 162,
+      "compute_cost_usd": 4e-05,
+      "model_cost_usd": 0.0,
+      "duration_seconds": 0.0668,
+      "notes": "",
+      "metadata": {
+        "n_transformations": 1
+      }
+    },
+    {
+      "firefly": "analysis_planner",
+      "human_role": "Senior data scientist",
+      "output": "Planned task='regression' with 3 candidate(s); split='time_based_holdout'; 2 human approval gate(s).",
+      "manual_minutes": 60.0,
+      "compute_cost_usd": 1e-06,
+      "model_cost_usd": 0.0,
+      "duration_seconds": 0.0012,
+      "notes": "",
+      "metadata": {
+        "task": "regression",
+        "n_candidates": 3
+      }
+    },
+    {
+      "firefly": "model_scientist",
+      "human_role": "ML scientist",
+      "output": "Trained 3 candidate(s); selected 'random_forest' (r2=0.7762).",
+      "manual_minutes": 450,
+      "compute_cost_usd": 0.041849,
+      "model_cost_usd": 0.0,
+      "duration_seconds": 69.7479,
+      "notes": "",
+      "metadata": {
+        "selected": "random_forest",
+        "score": 0.7762,
+        "n_candidates": 3
+      }
+    },
+    {
+      "firefly": "validator",
+      "human_role": "Model-risk specialist",
+      "output": "Validation verdict='pass'; 6 checks; max safe deployment level 4.",
+      "manual_minutes": 96,
+      "compute_cost_usd": 8e-06,
+      "model_cost_usd": 0.0,
+      "duration_seconds": 0.0131,
+      "notes": "",
+      "metadata": {
+        "verdict": "pass",
+        "max_level": 4
+      }
+    },
+    {
+      "firefly": "finops",
+      "human_role": "Infrastructure engineer",
+      "output": "Cost-quality analysis across 3 candidate(s); recommended 'Balanced'.",
+      "manual_minutes": 45.0,
+      "compute_cost_usd": 1e-06,
+      "model_cost_usd": 0.0,
+      "duration_seconds": 0.0012,
+      "notes": "",
+      "metadata": {
+        "recommended": "Balanced"
+      }
+    }
+  ],
+  "outputs": [
+    "analysis.ipynb",
+    "analysis.py",
+    "assumptions.yaml",
+    "cost_quality.json",
+    "data_quality.json",
+    "evaluation_report.html",
+    "executive_report.html",
+    "model_card.md",
+    "planner_graph.json",
+    "technical_report.html",
+    "transformed_dataset.parquet",
+    "validation_report.json",
+    "workload.json"
+  ]
+}

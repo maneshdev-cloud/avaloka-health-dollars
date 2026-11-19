@@ -1,0 +1,357 @@
+{
+  "dataset": {
+    "source": "data/wb_panel_dated.csv",
+    "format": "csv",
+    "sha256": "c61a6f997ba497a4fed912a4a6e5a0d50d8e6a911598316a3d3a71f6e0098e6d",
+    "n_rows": 5208,
+    "n_cols": 9,
+    "delimiter": ","
+  },
+  "columns": [
+    {
+      "name": "country_code",
+      "dtype": "object",
+      "role": "categorical",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 217,
+      "unique_pct": 0.0417,
+      "top_values": [
+        {
+          "value": "ABW",
+          "count": 24
+        },
+        {
+          "value": "AFG",
+          "count": 24
+        },
+        {
+          "value": "AGO",
+          "count": 24
+        },
+        {
+          "value": "ALB",
+          "count": 24
+        },
+        {
+          "value": "AND",
+          "count": 24
+        },
+        {
+          "value": "ARE",
+          "count": 24
+        },
+        {
+          "value": "ARG",
+          "count": 24
+        },
+        {
+          "value": "ARM",
+          "count": 24
+        },
+        {
+          "value": "ASM",
+          "count": 24
+        },
+        {
+          "value": "ATG",
+          "count": 24
+        }
+      ],
+      "sample_values": [
+        "ABW",
+        "ABW",
+        "ABW",
+        "ABW",
+        "ABW"
+      ]
+    },
+    {
+      "name": "country",
+      "dtype": "object",
+      "role": "categorical",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 217,
+      "unique_pct": 0.0417,
+      "top_values": [
+        {
+          "value": "Aruba",
+          "count": 24
+        },
+        {
+          "value": "Afghanistan",
+          "count": 24
+        },
+        {
+          "value": "Angola",
+          "count": 24
+        },
+        {
+          "value": "Albania",
+          "count": 24
+        },
+        {
+          "value": "Andorra",
+          "count": 24
+        },
+        {
+          "value": "United Arab Emirates",
+          "count": 24
+        },
+        {
+          "value": "Argentina",
+          "count": 24
+        },
+        {
+          "value": "Armenia",
+          "count": 24
+        },
+        {
+          "value": "American Samoa",
+          "count": 24
+        },
+        {
+          "value": "Antigua and Barbuda",
+          "count": 24
+        }
+      ],
+      "sample_values": [
+        "Aruba",
+        "Aruba",
+        "Aruba",
+        "Aruba",
+        "Aruba"
+      ]
+    },
+    {
+      "name": "year",
+      "dtype": "int64",
+      "role": "numeric",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 24,
+      "unique_pct": 0.0046,
+      "stats": {
+        "min": 2000.0,
+        "max": 2023.0,
+        "mean": 2011.5,
+        "median": 2011.5,
+        "std": 6.922851,
+        "p25": 2005.75,
+        "p75": 2017.25,
+        "skew": 0.0,
+        "n_outliers": 0
+      },
+      "sample_values": [
+        2000,
+        2001,
+        2002,
+        2003,
+        2004
+      ]
+    },
+    {
+      "name": "life_expectancy",
+      "dtype": "float64",
+      "role": "numeric",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 4820,
+      "unique_pct": 0.9255,
+      "stats": {
+        "min": 14.665,
+        "max": 86.372,
+        "mean": 70.891179,
+        "median": 72.603,
+        "std": 8.79008,
+        "p25": 65.4193841463415,
+        "p75": 77.4658536585366,
+        "skew": -0.8275,
+        "n_outliers": 54
+      },
+      "sample_values": [
+        72.939,
+        73.044,
+        73.135,
+        73.236,
+        73.223
+      ]
+    },
+    {
+      "name": "health_spend_ppp",
+      "dtype": "float64",
+      "role": "numeric",
+      "missing": 669,
+      "missing_pct": 0.1285,
+      "n_unique": 4539,
+      "unique_pct": 0.8715,
+      "stats": {
+        "min": 6.10639341351946,
+        "max": 13473.1932166645,
+        "mean": 1267.514916,
+        "median": 583.472693,
+        "std": 1701.585605,
+        "p25": 171.51117861528598,
+        "p75": 1630.67273993869,
+        "skew": 2.337,
+        "n_outliers": 385
+      },
+      "sample_values": [
+        85.8574949380725,
+        85.933025306351,
+        93.9358043024416,
+        105.927706244667,
+        118.405819500501
+      ]
+    },
+    {
+      "name": "health_spend_usd",
+      "dtype": "float64",
+      "role": "numeric",
+      "missing": 671,
+      "missing_pct": 0.1288,
+      "n_unique": 4537,
+      "unique_pct": 0.8712,
+      "stats": {
+        "min": 4.17578602,
+        "max": 13473.19335938,
+        "mean": 987.540083,
+        "median": 265.720917,
+        "std": 1759.934077,
+        "p25": 64.67756653,
+        "p75": 899.59460449,
+        "skew": 2.8174,
+        "n_outliers": 632
+      },
+      "sample_values": [
+        16.70697403,
+        17.74602509,
+        21.42300415,
+        25.11388779,
+        28.9412632
+      ]
+    },
+    {
+      "name": "gdp_per_capita_ppp",
+      "dtype": "float64",
+      "role": "numeric",
+      "missing": 458,
+      "missing_pct": 0.0879,
+      "n_unique": 4750,
+      "unique_pct": 0.9121,
+      "stats": {
+        "min": 433.064313522016,
+        "max": 180939.425774901,
+        "mean": 19871.511978,
+        "median": 11279.776039,
+        "std": 22603.844011,
+        "p25": 3892.0411607188726,
+        "p75": 28905.91634071145,
+        "skew": 2.1251,
+        "n_outliers": 226
+      },
+      "sample_values": [
+        30245.7069728754,
+        31920.2390734772,
+        31888.5087362839,
+        32507.0843145945,
+        35059.2730978445
+      ]
+    },
+    {
+      "name": "population",
+      "dtype": "int64",
+      "role": "id",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 5202,
+      "unique_pct": 0.9988,
+      "top_values": [
+        {
+          "value": "37276",
+          "count": 2
+        },
+        {
+          "value": "127445000",
+          "count": 2
+        },
+        {
+          "value": "9816",
+          "count": 2
+        },
+        {
+          "value": "32057",
+          "count": 2
+        },
+        {
+          "value": "108404",
+          "count": 2
+        },
+        {
+          "value": "34267",
+          "count": 2
+        },
+        {
+          "value": "17344874",
+          "count": 1
+        },
+        {
+          "value": "17231624",
+          "count": 1
+        },
+        {
+          "value": "17131296",
+          "count": 1
+        },
+        {
+          "value": "17030314",
+          "count": 1
+        }
+      ],
+      "sample_values": [
+        90588,
+        91439,
+        92074,
+        93128,
+        95138
+      ]
+    },
+    {
+      "name": "date",
+      "dtype": "object",
+      "role": "datetime",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 24,
+      "unique_pct": 0.0046,
+      "sample_values": [
+        "2000-01-01",
+        "2001-01-01",
+        "2002-01-01",
+        "2003-01-01",
+        "2004-01-01"
+      ]
+    }
+  ],
+  "quality": {
+    "score": 100,
+    "n_rows": 5208,
+    "n_cols": 9,
+    "duplicate_rows": 0,
+    "constant_columns": [],
+    "high_missing_columns": [],
+    "high_cardinality_columns": [],
+    "id_columns": [
+      "population"
+    ],
+    "issues": []
+  },
+  "correlations": [
+    {
+      "a": "health_spend_ppp",
+      "b": "health_spend_usd",
+      "corr": 0.955
+    }
+  ]
+}

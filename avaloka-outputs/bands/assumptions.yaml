@@ -1,0 +1,43 @@
+mission:
+  id: c5b14c84e8da
+  goal: average life_expectancy by spend_band
+  kind: analyze
+sampling:
+  sampled: false
+  reason: 192 rows fits the live full-analysis lane; the full dataset is used so no
+    information is discarded.
+  n_input_rows: 192
+  n_working_rows: 192
+  strategy: none
+  stratify_by: null
+transformations:
+- op: drop_constant_columns
+  columns:
+  - year
+- op: strip_whitespace
+  columns:
+  - country_code
+  - country
+  - spend_band
+task_choice:
+  task: exploratory_analysis
+  reason: No --target supplied; mission is analysis-only.
+split:
+  strategy: none
+  reason: Analysis-only mission; no model split required.
+human_approval_gates:
+- Confirm the target and metric match the intended decision.
+refuse_if:
+- Target leakage is detected and unresolved.
+- Data is insufficient for a stable estimate of the chosen metric.
+- A requested deployment latency cannot be met by any candidate.
+data_quality_issues:
+- severity: low
+  column: year
+  kind: constant_column
+  detail: Column has a single value; no predictive content.
+- severity: medium
+  column: null
+  kind: small_sample
+  detail: Only 192 rows; statistical conclusions are low-confidence.
+deferred_decisions: []

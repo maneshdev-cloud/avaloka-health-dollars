@@ -1,0 +1,52 @@
+{
+  "goal": "average life_expectancy by spend_band",
+  "kind": "group_comparison",
+  "status": "answered",
+  "scope": "All 192 working rows",
+  "columns": [
+    "life_expectancy",
+    "spend_band"
+  ],
+  "metrics": {
+    "group_column": "spend_band",
+    "value_column": "life_expectancy",
+    "aggregation": "mean",
+    "groups": [
+      {
+        "group": "8000+",
+        "value": 82.959915
+      },
+      {
+        "group": "4000-8000",
+        "value": 82.622075
+      },
+      {
+        "group": "2000-4000",
+        "value": 77.512087
+      },
+      {
+        "group": "1000-2000",
+        "value": 74.136926
+      },
+      {
+        "group": "500-1000",
+        "value": 72.225867
+      },
+      {
+        "group": "250-500",
+        "value": 67.522164
+      },
+      {
+        "group": "0-250",
+        "value": 65.013489
+      }
+    ]
+  },
+  "findings": [
+    "spend_band=8000+: mean life_expectancy=83.",
+    "spend_band=4000-8000: mean life_expectancy=82.6.",
+    "spend_band=2000-4000: mean life_expectancy=77.5.",
+    "spend_band=1000-2000: mean life_expectancy=74.1.",
+    "spend_band=500-1000: mean life_expectancy=72.2."
+  ]
+}

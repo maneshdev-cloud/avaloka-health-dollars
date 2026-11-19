@@ -1,0 +1,88 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Technical report — Predict &#39;life_expectancy&#39;</title>
+<style>
+body{font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;color:#1b1f24;background:#f6f8fa}
+.wrap{max-width:960px;margin:0 auto;padding:32px}
+h1{font-size:28px;margin:0 0 4px} h2{font-size:20px;margin:28px 0 8px;border-bottom:1px solid #e1e4e8;padding-bottom:6px}
+.sub{color:#57606a;margin:0 0 20px}
+.card{background:#fff;border:1px solid #e1e4e8;border-radius:8px;padding:16px 20px;margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:14px} th,td{text-align:left;padding:7px 10px;border-bottom:1px solid #eaecef}
+th{background:#f6f8fa} .kpi{display:inline-block;min-width:150px;margin:6px 18px 6px 0}
+.kpi .v{font-size:22px;font-weight:600} .kpi .l{color:#57606a;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.pass{color:#1a7f37;font-weight:600}.warn{color:#9a6700;font-weight:600}.fail{color:#cf222e;font-weight:600}
+.badge{display:inline-block;padding:2px 8px;border-radius:12px;font-size:12px;background:#ddf4ff;color:#0969da}
+.muted{color:#57606a;font-size:13px} code{background:#eff1f3;padding:1px 5px;border-radius:4px}
+</style></head><body><div class="wrap">
+<h1>Technical report</h1>
+<p class="sub">Predict &#39;life_expectancy&#39; · mission <code>0fba6f8e7878</code></p>
+
+<h2>Dataset</h2>
+<div class="card"><p><code>data/wb_panel_dated.csv</code> — 5208 rows × 9 cols
+(csv). Quality score <strong>100/100</strong>.
+SHA-256 <span class="muted">c61a6f997ba497a4…</span></p></div>
+
+<h2>Schema &amp; distributions</h2>
+<div class="card"><table><tr><th>Column</th><th>Role</th><th>Dtype</th><th>Missing</th><th>Unique</th><th>Summary</th></tr>
+<tr><td>country_code</td><td>categorical</td><td>object</td>
+<td>0.0%</td><td>217</td>
+<td class="muted">top: ABW(24), AFG(24), AGO(24)</td></tr><tr><td>country</td><td>categorical</td><td>object</td>
+<td>0.0%</td><td>217</td>
+<td class="muted">top: Aruba(24), Afghanistan(24), Angola(24)</td></tr><tr><td>year</td><td>numeric</td><td>int64</td>
+<td>0.0%</td><td>24</td>
+<td class="muted">μ=2.01e+03, σ=6.92,
+[2e+03, 2.02e+03], outliers=0
+</td></tr><tr><td>life_expectancy</td><td>numeric</td><td>float64</td>
+<td>0.0%</td><td>4820</td>
+<td class="muted">μ=70.9, σ=8.79,
+[14.7, 86.4], outliers=54
+</td></tr><tr><td>health_spend_ppp</td><td>numeric</td><td>float64</td>
+<td>12.8%</td><td>4539</td>
+<td class="muted">μ=1.27e+03, σ=1.7e+03,
+[6.11, 1.35e+04], outliers=385
+</td></tr><tr><td>health_spend_usd</td><td>numeric</td><td>float64</td>
+<td>12.9%</td><td>4537</td>
+<td class="muted">μ=988, σ=1.76e+03,
+[4.18, 1.35e+04], outliers=632
+</td></tr><tr><td>gdp_per_capita_ppp</td><td>numeric</td><td>float64</td>
+<td>8.8%</td><td>4750</td>
+<td class="muted">μ=1.99e+04, σ=2.26e+04,
+[433, 1.81e+05], outliers=226
+</td></tr><tr><td>population</td><td>id</td><td>int64</td>
+<td>0.0%</td><td>5202</td>
+<td class="muted">top: 37276(2), 127445000(2), 9816(2)</td></tr><tr><td>date</td><td>datetime</td><td>object</td>
+<td>0.0%</td><td>24</td>
+<td class="muted"></td></tr></table></div>
+
+<h2>Strongest correlations</h2>
+<div class="card"><table><tr><th>A</th><th>B</th><th>|corr|</th></tr>
+<tr><td>health_spend_ppp</td><td>health_spend_usd</td><td>0.955</td></tr></table></div>
+<h2>Data quality issues</h2>
+<div class="card"><p>No material quality issues detected.</p></div>
+
+<h2>Plan</h2>
+<div class="card"><p>Task: <strong>regression</strong> — Numeric target with 4820 distinct values.</p>
+<p>Split: <code>time_based_holdout</code> — Datetime column present; a temporal split avoids look-ahead leakage.</p>
+<p>Candidate algorithms: linear_regression, random_forest, gradient_boosting</p>
+<p class="muted">Unconstrained budget; all candidate algorithms considered.</p>
+<p><strong>Hypotheses:</strong></p><ul><li>&#39;health_spend_ppp&#39; and &#39;health_spend_usd&#39; move together (|corr|=0.955); consider redundancy or a shared driver.</li><li>Identify which features most influence &#39;life_expectancy&#39; and quantify the effect.</li></ul></div>
+
+
+<h2>Model results</h2>
+<div class="card"><table><tr><th>Candidate</th><th>r2</th><th>CV mean ± std</th><th>Train s</th><th>Latency ms</th></tr>
+<tr style="font-weight:600;background:#f0fff4">
+<td>random_forest</td><td>0.7762</td>
+<td>0.846 ± 0.051</td>
+<td>14.07</td><td>121.13</td></tr><tr >
+<td>gradient_boosting</td><td>0.7610</td>
+<td>0.788 ± 0.028</td>
+<td>0.96</td><td>12.41</td></tr><tr >
+<td>linear_regression</td><td>0.1139</td>
+<td>0.457 ± 0.032</td>
+<td>0.04</td><td>9.80</td></tr></table><p>Selected: <strong>random_forest</strong>.</p></div>
+<h2>Validation</h2>
+<div class="card"><p>Verdict <span class="pass">PASS</span>,
+max safe deployment level 4.</p>
+<table><tr><th>Check</th><th>Status</th><th>Detail</th></tr>
+<tr><td>data_sufficiency</td><td class="pass">pass</td><td class="muted">~50 rows/feature suggests &gt;= 400 rows for 8 features.</td></tr><tr><td>target_leakage</td><td class="pass">pass</td><td class="muted">No feature is near-perfectly predictive of the target.</td></tr><tr><td>split_validity</td><td class="pass">pass</td><td class="muted">Used &#39;time_based_holdout&#39; (4166 train / 1042 test rows).</td></tr><tr><td>beats_baseline</td><td class="pass">pass</td><td class="muted">CV r2 0.846 beats the mean baseline (-0.106) by more than fold noise.</td></tr><tr><td>stability</td><td class="pass">pass</td><td class="muted">CV r2 = 0.846 +/- 0.051 (stable).</td></tr><tr><td>overfitting</td><td class="pass">pass</td><td class="muted">Holdout and CV scores are consistent.</td></tr></table></div>
+
+<p class="muted">Reproduce with <code>analysis.py</code> / <code>analysis.ipynb</code>; see <code>lineage.json</code> and <code>environment.lock</code>.</p>
+</div></body></html>

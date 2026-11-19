@@ -1,0 +1,393 @@
+{
+  "dataset": {
+    "source": "data/wb_2023_snapshot.csv",
+    "format": "csv",
+    "sha256": "ef43d8b4575479370f90fb139cc204cc56a89cac713cd656f63c15a54cce638d",
+    "n_rows": 192,
+    "n_cols": 9,
+    "delimiter": ","
+  },
+  "columns": [
+    {
+      "name": "country_code",
+      "dtype": "object",
+      "role": "id",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 192,
+      "unique_pct": 1.0,
+      "top_values": [
+        {
+          "value": "AFG",
+          "count": 1
+        },
+        {
+          "value": "AGO",
+          "count": 1
+        },
+        {
+          "value": "ALB",
+          "count": 1
+        },
+        {
+          "value": "AND",
+          "count": 1
+        },
+        {
+          "value": "ARE",
+          "count": 1
+        },
+        {
+          "value": "ARG",
+          "count": 1
+        },
+        {
+          "value": "ARM",
+          "count": 1
+        },
+        {
+          "value": "ATG",
+          "count": 1
+        },
+        {
+          "value": "AUS",
+          "count": 1
+        },
+        {
+          "value": "AUT",
+          "count": 1
+        }
+      ],
+      "sample_values": [
+        "AFG",
+        "AGO",
+        "ALB",
+        "AND",
+        "ARE"
+      ]
+    },
+    {
+      "name": "country",
+      "dtype": "object",
+      "role": "id",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 192,
+      "unique_pct": 1.0,
+      "top_values": [
+        {
+          "value": "Afghanistan",
+          "count": 1
+        },
+        {
+          "value": "Angola",
+          "count": 1
+        },
+        {
+          "value": "Albania",
+          "count": 1
+        },
+        {
+          "value": "Andorra",
+          "count": 1
+        },
+        {
+          "value": "United Arab Emirates",
+          "count": 1
+        },
+        {
+          "value": "Argentina",
+          "count": 1
+        },
+        {
+          "value": "Armenia",
+          "count": 1
+        },
+        {
+          "value": "Antigua and Barbuda",
+          "count": 1
+        },
+        {
+          "value": "Australia",
+          "count": 1
+        },
+        {
+          "value": "Austria",
+          "count": 1
+        }
+      ],
+      "sample_values": [
+        "Afghanistan",
+        "Angola",
+        "Albania",
+        "Andorra",
+        "United Arab Emirates"
+      ]
+    },
+    {
+      "name": "year",
+      "dtype": "int64",
+      "role": "constant",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 1,
+      "unique_pct": 0.0052,
+      "sample_values": [
+        2023,
+        2023,
+        2023,
+        2023,
+        2023
+      ]
+    },
+    {
+      "name": "life_expectancy",
+      "dtype": "float64",
+      "role": "numeric",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 191,
+      "unique_pct": 0.9948,
+      "stats": {
+        "min": 54.462,
+        "max": 86.372,
+        "mean": 73.114166,
+        "median": 73.528,
+        "std": 7.183343,
+        "p25": 67.37700000000001,
+        "p75": 78.16813414634149,
+        "skew": -0.2893,
+        "n_outliers": 0
+      },
+      "sample_values": [
+        66.035,
+        64.617,
+        79.602,
+        84.041,
+        82.909
+      ]
+    },
+    {
+      "name": "health_spend_ppp",
+      "dtype": "float64",
+      "role": "numeric",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 192,
+      "unique_pct": 1.0,
+      "stats": {
+        "min": 28.261876902732,
+        "max": 13473.1932166645,
+        "mean": 2097.248255,
+        "median": 1088.695669,
+        "std": 2539.445073,
+        "p25": 297.070273242649,
+        "p75": 2923.3844087351854,
+        "skew": 1.792,
+        "n_outliers": 15
+      },
+      "sample_values": [
+        329.823207832857,
+        248.38769563917,
+        1464.53502823031,
+        5519.41470327922,
+        3727.12127967465
+      ]
+    },
+    {
+      "name": "health_spend_usd",
+      "dtype": "float64",
+      "role": "numeric",
+      "missing": 1,
+      "missing_pct": 0.0052,
+      "n_unique": 191,
+      "unique_pct": 0.9948,
+      "stats": {
+        "min": 17.44003487,
+        "max": 13473.19335938,
+        "mean": 1433.836658,
+        "median": 470.403473,
+        "std": 2328.266823,
+        "p25": 94.38262939500001,
+        "p75": 1611.698486325,
+        "skew": 2.5786,
+        "n_outliers": 23
+      },
+      "sample_values": [
+        59.06770706,
+        76.07118225,
+        590.62799072,
+        3605.19799805,
+        2401.52026367
+      ]
+    },
+    {
+      "name": "gdp_per_capita_ppp",
+      "dtype": "float64",
+      "role": "numeric",
+      "missing": 8,
+      "missing_pct": 0.0417,
+      "n_unique": 184,
+      "unique_pct": 0.9583,
+      "stats": {
+        "min": 1147.42440486734,
+        "max": 152596.126692093,
+        "mean": 28712.118085,
+        "median": 18166.472393,
+        "std": 29208.031351,
+        "p25": 6942.719218108522,
+        "p75": 43471.92253939003,
+        "skew": 1.6713,
+        "n_outliers": 5
+      },
+      "sample_values": [
+        2203.53761869487,
+        9549.79313920752,
+        24847.5057998051,
+        71789.7907855414,
+        78019.5228244288
+      ]
+    },
+    {
+      "name": "population",
+      "dtype": "int64",
+      "role": "id",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 192,
+      "unique_pct": 1.0,
+      "top_values": [
+        {
+          "value": "41454761",
+          "count": 1
+        },
+        {
+          "value": "36749906",
+          "count": 1
+        },
+        {
+          "value": "2411658",
+          "count": 1
+        },
+        {
+          "value": "80856",
+          "count": 1
+        },
+        {
+          "value": "10483751",
+          "count": 1
+        },
+        {
+          "value": "45538401",
+          "count": 1
+        },
+        {
+          "value": "2964300",
+          "count": 1
+        },
+        {
+          "value": "93316",
+          "count": 1
+        },
+        {
+          "value": "26659922",
+          "count": 1
+        },
+        {
+          "value": "9131761",
+          "count": 1
+        }
+      ],
+      "sample_values": [
+        41454761,
+        36749906,
+        2411658,
+        80856,
+        10483751
+      ]
+    },
+    {
+      "name": "spend_band",
+      "dtype": "object",
+      "role": "categorical",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 7,
+      "unique_pct": 0.0365,
+      "top_values": [
+        {
+          "value": "0-250",
+          "count": 45
+        },
+        {
+          "value": "1000-2000",
+          "count": 37
+        },
+        {
+          "value": "2000-4000",
+          "count": 30
+        },
+        {
+          "value": "500-1000",
+          "count": 30
+        },
+        {
+          "value": "4000-8000",
+          "count": 25
+        },
+        {
+          "value": "250-500",
+          "count": 17
+        },
+        {
+          "value": "8000+",
+          "count": 8
+        }
+      ],
+      "sample_values": [
+        "250-500",
+        "0-250",
+        "1000-2000",
+        "4000-8000",
+        "2000-4000"
+      ]
+    }
+  ],
+  "quality": {
+    "score": 88,
+    "n_rows": 192,
+    "n_cols": 9,
+    "duplicate_rows": 0,
+    "constant_columns": [
+      "year"
+    ],
+    "high_missing_columns": [],
+    "high_cardinality_columns": [],
+    "id_columns": [
+      "country_code",
+      "country",
+      "population"
+    ],
+    "issues": [
+      {
+        "severity": "low",
+        "column": "year",
+        "kind": "constant_column",
+        "detail": "Column has a single value; no predictive content."
+      },
+      {
+        "severity": "medium",
+        "column": null,
+        "kind": "small_sample",
+        "detail": "Only 192 rows; statistical conclusions are low-confidence."
+      }
+    ]
+  },
+  "correlations": [
+    {
+      "a": "health_spend_ppp",
+      "b": "health_spend_usd",
+      "corr": 0.9682
+    }
+  ]
+}

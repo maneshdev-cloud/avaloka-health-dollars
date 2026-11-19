@@ -1,0 +1,80 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Technical report — correlation between health_spend_ppp and life_expectancy</title>
+<style>
+body{font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;color:#1b1f24;background:#f6f8fa}
+.wrap{max-width:960px;margin:0 auto;padding:32px}
+h1{font-size:28px;margin:0 0 4px} h2{font-size:20px;margin:28px 0 8px;border-bottom:1px solid #e1e4e8;padding-bottom:6px}
+.sub{color:#57606a;margin:0 0 20px}
+.card{background:#fff;border:1px solid #e1e4e8;border-radius:8px;padding:16px 20px;margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:14px} th,td{text-align:left;padding:7px 10px;border-bottom:1px solid #eaecef}
+th{background:#f6f8fa} .kpi{display:inline-block;min-width:150px;margin:6px 18px 6px 0}
+.kpi .v{font-size:22px;font-weight:600} .kpi .l{color:#57606a;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.pass{color:#1a7f37;font-weight:600}.warn{color:#9a6700;font-weight:600}.fail{color:#cf222e;font-weight:600}
+.badge{display:inline-block;padding:2px 8px;border-radius:12px;font-size:12px;background:#ddf4ff;color:#0969da}
+.muted{color:#57606a;font-size:13px} code{background:#eff1f3;padding:1px 5px;border-radius:4px}
+</style></head><body><div class="wrap">
+<h1>Technical report</h1>
+<p class="sub">correlation between health_spend_ppp and life_expectancy · mission <code>7622c6e30fd9</code></p>
+
+<h2>Dataset</h2>
+<div class="card"><p><code>data/wb_panel_dated.csv</code> — 5208 rows × 9 cols
+(csv). Quality score <strong>100/100</strong>.
+SHA-256 <span class="muted">c61a6f997ba497a4…</span></p></div>
+
+<h2>Schema &amp; distributions</h2>
+<div class="card"><table><tr><th>Column</th><th>Role</th><th>Dtype</th><th>Missing</th><th>Unique</th><th>Summary</th></tr>
+<tr><td>country_code</td><td>categorical</td><td>object</td>
+<td>0.0%</td><td>217</td>
+<td class="muted">top: ABW(24), AFG(24), AGO(24)</td></tr><tr><td>country</td><td>categorical</td><td>object</td>
+<td>0.0%</td><td>217</td>
+<td class="muted">top: Aruba(24), Afghanistan(24), Angola(24)</td></tr><tr><td>year</td><td>numeric</td><td>int64</td>
+<td>0.0%</td><td>24</td>
+<td class="muted">μ=2.01e+03, σ=6.92,
+[2e+03, 2.02e+03], outliers=0
+</td></tr><tr><td>life_expectancy</td><td>numeric</td><td>float64</td>
+<td>0.0%</td><td>4820</td>
+<td class="muted">μ=70.9, σ=8.79,
+[14.7, 86.4], outliers=54
+</td></tr><tr><td>health_spend_ppp</td><td>numeric</td><td>float64</td>
+<td>12.8%</td><td>4539</td>
+<td class="muted">μ=1.27e+03, σ=1.7e+03,
+[6.11, 1.35e+04], outliers=385
+</td></tr><tr><td>health_spend_usd</td><td>numeric</td><td>float64</td>
+<td>12.9%</td><td>4537</td>
+<td class="muted">μ=988, σ=1.76e+03,
+[4.18, 1.35e+04], outliers=632
+</td></tr><tr><td>gdp_per_capita_ppp</td><td>numeric</td><td>float64</td>
+<td>8.8%</td><td>4750</td>
+<td class="muted">μ=1.99e+04, σ=2.26e+04,
+[433, 1.81e+05], outliers=226
+</td></tr><tr><td>population</td><td>id</td><td>int64</td>
+<td>0.0%</td><td>5202</td>
+<td class="muted">top: 37276(2), 127445000(2), 9816(2)</td></tr><tr><td>date</td><td>datetime</td><td>object</td>
+<td>0.0%</td><td>24</td>
+<td class="muted"></td></tr></table></div>
+
+<h2>Strongest correlations</h2>
+<div class="card"><table><tr><th>A</th><th>B</th><th>|corr|</th></tr>
+<tr><td>health_spend_ppp</td><td>health_spend_usd</td><td>0.955</td></tr></table></div>
+<h2>Data quality issues</h2>
+<div class="card"><p>No material quality issues detected.</p></div>
+
+<h2>Plan</h2>
+<div class="card"><p>Task: <strong>exploratory_analysis</strong> — No --target supplied; mission is analysis-only.</p>
+<p>Split: <code>none</code> — Analysis-only mission; no model split required.</p>
+<p>Candidate algorithms: —</p>
+<p class="muted">Unconstrained budget; all candidate algorithms considered.</p>
+<p><strong>Hypotheses:</strong></p><ul><li>&#39;health_spend_ppp&#39; and &#39;health_spend_usd&#39; move together (|corr|=0.955); consider redundancy or a shared driver.</li><li>Surface the dominant segments and the variables that separate them.</li></ul></div>
+
+<h2>Goal-specific analysis</h2>
+<div class="card"><p><strong>correlation</strong> — answered
+· All 5,208 working rows</p><ul><li>life_expectancy and health_spend_ppp: Pearson r=0.655.</li><li>Correlation alone does not establish causation.</li></ul>
+<p class="muted">Measured values and calculation details: <code>goal_analysis.json</code>.</p></div>
+
+<h2>Validation</h2>
+<div class="card"><p>Verdict <span class="pass">PASS</span>,
+max safe deployment level 1.</p>
+<table><tr><th>Check</th><th>Status</th><th>Detail</th></tr>
+<tr><td>data_sufficiency</td><td class="pass">pass</td><td class="muted">EDA needs only a modest sample.</td></tr></table></div>
+
+<p class="muted">Reproduce with <code>analysis.py</code> / <code>analysis.ipynb</code>; see <code>lineage.json</code> and <code>environment.lock</code>.</p>
+</div></body></html>

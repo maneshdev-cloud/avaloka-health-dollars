@@ -1,0 +1,63 @@
+{
+  "options": {
+    "Economical": {
+      "candidate": "linear_regression",
+      "validation_score": 0.1139,
+      "metric": "r2",
+      "training_cost_usd": 0.0,
+      "api_latency_ms": 9.8,
+      "est_monthly_serving_usd": 31.72
+    },
+    "Balanced": {
+      "candidate": "gradient_boosting",
+      "validation_score": 0.761,
+      "metric": "r2",
+      "training_cost_usd": 0.0,
+      "api_latency_ms": 12.41,
+      "est_monthly_serving_usd": 35.38
+    },
+    "Maximum quality": {
+      "candidate": "random_forest",
+      "validation_score": 0.7762,
+      "metric": "r2",
+      "training_cost_usd": 0.0005,
+      "api_latency_ms": 121.13,
+      "est_monthly_serving_usd": 187.59
+    }
+  },
+  "all_candidates": [
+    {
+      "candidate": "random_forest",
+      "validation_score": 0.7762,
+      "metric": "r2",
+      "training_cost_usd": 0.0005,
+      "api_latency_ms": 121.13,
+      "est_monthly_serving_usd": 187.59
+    },
+    {
+      "candidate": "gradient_boosting",
+      "validation_score": 0.761,
+      "metric": "r2",
+      "training_cost_usd": 0.0,
+      "api_latency_ms": 12.41,
+      "est_monthly_serving_usd": 35.38
+    },
+    {
+      "candidate": "linear_regression",
+      "validation_score": 0.1139,
+      "metric": "r2",
+      "training_cost_usd": 0.0,
+      "api_latency_ms": 9.8,
+      "est_monthly_serving_usd": 31.72
+    }
+  ],
+  "recommendation": {
+    "choice": "Balanced",
+    "rationale": "Balanced gains +0.647 over Economical. Maximum quality adds only +0.015 more but is ~5.9x the serving cost."
+  },
+  "assumptions": {
+    "cpu_usd_per_hour": 0.12,
+    "serving_base_usd": 18.0,
+    "serving_latency_usd_per_ms": 1.4
+  }
+}
