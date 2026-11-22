@@ -120,15 +120,7 @@
     <p class="caption">Unweighted mean life expectancy across countries, each year 2000&ndash;2023. Every country counts equally, so this is the average country&rsquo;s trajectory &mdash; not a population-weighted global figure.</p>
   </div>
 
-  <h2><span class="num">05</span> Correlation &mdash; and the GDP twist</h2>
-  <p class="sub">Health spending correlates with life expectancy at Pearson r = 0.655 across all 5,208 country-years. But so does plain national wealth.</p>
-  <div class="grid2">
-    <div class="mini"><b>r = 0.655</b><span>health spend per capita (PPP) vs life expectancy</span></div>
-    <div class="mini"><b>r = 0.651</b><span>GDP per capita (PPP) vs life expectancy</span></div>
-  </div>
-  <p>GDP per capita predicts life expectancy about as well as health spending does. That reframes the whole question: the money itself is not the differentiator &mdash; <strong>how a country spends it is</strong>. Two countries at similar income can sit years apart in lifespan. The ceiling, the USA paradox and the Japan/Costa Rica contrast are all the same story: beyond a point, outcomes come from the system, not the budget.</p>
-
-  <h2><span class="num">06</span> The model</h2>
+  <h2><span class="num">05</span> The model</h2>
   <p class="sub">A random-forest model trained with Avaloka to predict life expectancy from spending, GDP, population and year.</p>
   <div class="grid2">
     <div class="mini"><b>R&sup2; 0.7762</b><span>holdout (time-based split: 4,166 train / 1,042 test rows)</span></div>
@@ -137,6 +129,14 @@
     <div class="mini"><b>PASS &middot; level 4/4</b><span>Avaloka validation: no target leakage, stable across folds</span></div>
   </div>
   <p>The model comparison is the saturation story in miniature: linear regression manages R&sup2; 0.11, while a random forest that can bend reaches 0.78. Life expectancy does not rise in a straight line with spending &mdash; it curves, and then it flattens.</p>
+
+  <h2><span class="num">06</span> Correlation &mdash; and the GDP twist</h2>
+  <p class="sub">Health spending correlates with life expectancy at Pearson r = 0.655 across all 5,208 country-years. But so does plain national wealth.</p>
+  <div class="grid2">
+    <div class="mini"><b>r = 0.655</b><span>health spend per capita (PPP) vs life expectancy</span></div>
+    <div class="mini"><b>r = 0.651</b><span>GDP per capita (PPP) vs life expectancy</span></div>
+  </div>
+  <p>GDP per capita predicts life expectancy about as well as health spending does. That reframes the whole question: the money itself is not the differentiator &mdash; <strong>how a country spends it is</strong>. Two countries at similar income can sit years apart in lifespan. The ceiling, the USA paradox and the Japan/Costa Rica contrast are all the same story: beyond a point, outcomes come from the system, not the budget.</p>
 
   <h2><span class="num">07</span> Methodology</h2>
   <ul>
@@ -154,6 +154,8 @@
     <li><strong>Correlation &ne; causation:</strong> r = 0.655 describes association. Health spending, wealth, education, sanitation and diet move together; this analysis does not separate their effects.</li>
     <li><strong>Coverage:</strong> 2023 figures reflect the latest World Bank data; 25 of 217 countries lack a 2023 spending or life-expectancy value and are absent from the snapshot (n = 192).</li>
   </ul>
+
+  <div class="callout"><p><strong>The takeaway:</strong> money matters, but only up to a point. Past $4,000 per person, it is not the budget, it is the system.</p></div>
 
   <footer>
     <p><strong>Manesh Sunil Jadhav</strong> &middot; Final-year Diploma in AI &amp; ML, Government Polytechnic Mumbai &middot; Best Undergraduate, Google Mumbai Data Challenge (Google + Zindi), Nov 2026</p>
